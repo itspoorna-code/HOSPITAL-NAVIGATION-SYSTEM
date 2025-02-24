@@ -1,0 +1,445 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar Container */
+.sidebar {
+  width: 250px; /* Fixed width */
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Initial gradient */
+  background-size: 400% 400%; /* Larger background for animation effect */
+  color: #ffffff; /* White text for visibility */
+  padding: 1.5rem; /* Padding inside the sidebar */
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  position: fixed; /* Fixed position */
+  animation: gradient-animation 10s ease infinite; /* Background animation */
+}
+
+/* Gradient Animation */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Logo Section */
+.sidebar .logo {
+  margin-bottom: 2rem; /* Space below the logo */
+}
+
+.sidebar .logo img {
+  max-width: 100%; /* Ensure the logo fits within its container */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Rounded corners for the logo */
+  border: 2px solid #ffffff; /* White border for contrast */
+  animation: bounce 2s infinite; /* Add bounce animation to the logo */
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Navigation Links */
+.sidebar nav {
+  display: flex;
+  flex-direction: column; /* Stack links vertically */
+  gap: 1.5rem; /* Increased spacing between links */
+  width: 100%; /* Full width */
+}
+
+.sidebar nav a {
+  text-decoration: none; /* Remove default underline */
+  font-family: 'Roboto', sans-serif; /* Clean, modern font */
+  font-size: 1.5rem; /* Larger font size for better visibility */
+  font-weight: bold; /* Make the text bold */
+  color: #ffffff; /* White text */
+  padding: 1rem 1.5rem; /* Add padding around links */
+  border-radius: 10px; /* Rounded corners for buttons */
+  text-align: center; /* Center-align the text */
+  transition: all 0.3s ease; /* Smooth hover transition */
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+}
+
+.sidebar nav a:hover {
+  background-color: rgba(255, 255, 255, 0.3); /* Brighter hover background */
+  color: #1a1a2e; /* Darker text on hover for contrast */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+  transform: scale(1.1) rotate(2deg); /* Slight zoom and rotate effect */
+  transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth animation */
+}
+
+/* Active Link (Optional for highlighting the current page) */
+.sidebar nav a.active {
+  background-color: rgba(255, 255, 255, 0.4); /* Highlight active link */
+  color: #1a1a2e; /* Darker text for contrast */
+  font-weight: bold; /* Extra emphasis for active link */
+  border: 2px solid #ffffff; /* Add a border for emphasis */
+  transform: scale(1.1); /* Highlight with scaling */
+}
+
+/* Add Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px; /* Adjust width for smaller screens */
+    padding: 1rem; /* Reduce padding */
+  }
+
+  .sidebar nav a {
+    font-size: 1.2rem; /* Adjust font size for smaller screens */
+  }
+}
+
+
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center content */
+  align-items: center; /* Horizontally center content */
+  height: 100vh; /* Full viewport height */
+  text-align: center; /* Center the text inside the container */
+  padding: 2rem; /* Optional: Add padding if needed */
+}
+
+header h1 {
+  font-size: 2.5rem; /* Adjust as needed */
+  margin-bottom: 1rem; /* Space between title and paragraph */
+}
+
+header p {
+  font-size: 1.2rem; /* Adjust as needed */
+  color: white;
+  text-decoration: bold; /* Adjust text color */
+}
+
+.content {
+  margin-left: 250px; /* Same as sidebar width */
+  padding: 25px;
+  background-color: #ecf0f1;
+  margin-right: 0px;
+  min-height: 100vh; /* Ensure content covers full height */
+}
+
+.content h2 {
+  margin-bottom: 20px;
+ 
+}
+
+.content p {
+  line-height: 1.6;
+}
+.team {
+  background-color: white;
+  padding: 60px 20px;
+}
+
+.team h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #0066cc;
+}
+
+.team ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.team li {
+  background: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  font-size: 16px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.team li:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .team li {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f8f9fa;
+  overflow-x: hidden;
+}
+
+/* Header Section */
+header {
+  background: url('/assets/front-nav.jpg') no-repeat center center/cover;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+  position: relative;
+  background-size: cover;
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.6);
+}
+
+header h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 2s ease-out;
+}
+
+header p {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 2s ease-out 1s;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Navigation Section */
+.cta-section {
+  padding: 50px 20px;
+  background-color: #f0f4f7;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+  animation: slideIn 1.5s ease-out;
+}
+
+.cta-section p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 30px;
+  animation: slideIn 2s ease-out 0.5s;
+}
+
+/* Slide In Animation */
+@keyframes slideIn {
+  from {
+      opacity: 0;
+      transform: translateX(-50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+.cta-button {
+  background-color: #0066cc;
+  color: white;
+  padding: 18px 35px;
+  font-size: 1.3rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #004d99;
+  transform: scale(1.1);
+}
+
+/* Features Section */
+.features {
+  
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+  padding: 20px 10%;
+  background-color: #ffffff;
+  animation: fadeUp 1s ease-out;
+}
+
+.feature-card {
+  background-color: #e9ecef;
+  width: 30%;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  text-decoration: whitesmoke;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card h3 {
+  font-size: 1.7rem;
+  color: #0066cc;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.feature-card:hover h3 {
+  color: whitesmoke;
+}
+.feature-card:hover p {
+  color: whitesmoke;
+}
+
+.feature-card p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.icon {
+  font-size: 45px;
+  color: #0066cc;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.feature-card:hover .icon {
+  color: whitesmoke;
+}
+
+footer {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 60px;
+  font-size: 1rem;
+}
+footer p{
+  color:whitesmoke;
+}
+footer a{
+  color: white;
+}
+footer :hover{
+  background-color: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+  .features {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .feature-card {
+      width: 80%;
+      margin-bottom: 30px;
+  }
+
+  header {
+      padding: 100px 20px;
+  }
+
+  header h1 {
+      font-size: 2.5rem;
+  }
+
+  .cta-button {
+      padding: 15px 25px;
+      font-size: 1.1rem;
+  }
+}
+
+#team-mem {
+  background: url('/assets/team.jpg') no-repeat center center/cover;
+  background-color: #f9f9f9; /* Light background for contrast */
+  padding: 2rem; /* Spacing around the section */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  text-align: center; /* Center-align the text */
+  margin-left: 250px; /* Same as sidebar width */
+  margin-right: 0px;
+  margin: 2rem auto; /* Center the section on the page */
+}
+
+#team-mem h2 {
+  color: black;
+  font-family: 'Roboto', sans-serif; /* Modern font for the heading */
+  font-size: 2rem; /* Larger heading size */
+   /* Dark text for good contrast */
+  margin-bottom: 1rem; /* Space below the heading */
+}
+
+#team-mem ul {
+  color:black;
+  list-style-type: none; /* Remove default list styling */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+}
+
+#team-mem li {
+  font-family: 'Roboto', sans-serif; /* Consistent font */
+  font-size: 1.2rem; /* Slightly larger font size for readability */
+  color: black; /* Soft dark color for text */
+  padding: 0.5rem 0; /* Spacing between items */
+  position: relative; /* For pseudo-element positioning */
+}
+
+#team-mem li::before {
+  content: "👤"; /* Add an icon before each name */
+  margin-right: 10px; /* Space between icon and text */
+  color: #6a11cb; /* Icon color to match theme */
+}
+
+#team-mem li:hover {
+  color:#6a11cb; /* Change text color on hover */
+  transform: translateY(-3px); /* Slight lift effect */
+  transition: 0.3s ease; /* Smooth hover effect */
+}

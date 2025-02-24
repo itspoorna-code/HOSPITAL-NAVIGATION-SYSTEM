@@ -1,0 +1,201 @@
+/* Health Check Section */
+.health-check {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Soft orange-pink gradient */
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+  animation: fadeIn 1s ease-out, pulse 2s infinite, gradientShift 5s ease-in-out infinite; /* Add gradient shift animation */
+}
+
+.health-check h2 {
+  font-size: 2.8rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.health-check-items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  justify-items: center;
+}
+
+.health-check-block {
+  background-color: #fff;
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease, color 0.4s ease, scale 0.4s ease, rotate 0.4s ease;
+  cursor: pointer;
+  color: #333;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.health-check-block:hover {
+  transform: translateY(-20px) scale(1.05) rotate(5deg); /* Add rotation effect */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient effect */
+  color: #fff; /* White text color */
+  border: 2px solid #ff7e5f; /* Border color change */
+}
+
+.health-check-block h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.health-check-block p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Hospital Specialities Section */
+.hospital-specialities {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Purple-blue gradient */
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-out, slideIn 1.5s ease-in-out, gradientShift 5s ease-in-out infinite; /* Slide-in + gradient shift */
+}
+
+.hospital-specialities h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.hospital-specialities p {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.speciality-blocks {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.speciality-block {
+  background-color: #fff;
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease, color 0.4s ease, scale 0.4s ease, rotate 0.4s ease;
+  cursor: pointer;
+  color: #333;
+  border: 2px solid transparent;
+}
+
+.speciality-block:hover {
+  transform: translateY(-20px) scale(1.05) rotate(5deg); /* Rotation effect */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient effect */
+  color: #fff; /* White text color */
+  border: 2px solid #6a11cb; /* Border color change */
+}
+
+.speciality-block h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.speciality-block p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.speciality-block ul {
+  list-style: none;
+  padding: 0;
+}
+
+.speciality-block li {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.speciality-block li:hover {
+  color: #ff7e5f; /* Hover effect on list items */
+}
+
+/* Key Animations for fade-in, pulse, slide-in, and gradient shift */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 126, 95, 0.5);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Initial gradient */
+  }
+  50% {
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Midway gradient */
+  }
+  100% {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Return to initial gradient */
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .health-check-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .speciality-blocks {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .health-check-items {
+    grid-template-columns: 1fr;
+  }
+
+  .speciality-blocks {
+    grid-template-columns: 1fr;
+  }
+}
