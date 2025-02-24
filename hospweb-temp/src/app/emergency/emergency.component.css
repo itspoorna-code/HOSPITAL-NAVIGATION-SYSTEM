@@ -1,0 +1,200 @@
+/* General Container */
+.slideshow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.slideshow img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: fadeInOut 18s infinite;
+}
+
+.slideshow img:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.slideshow img:nth-child(2) {
+  animation-delay: 6s;
+}
+
+.slideshow img:nth-child(3) {
+  animation-delay: 12s;
+}
+
+.slideshow img:nth-child(4) {
+  animation-delay: 18s;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+.emergency-services {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated Background Elements */
+.emergency-services::before,
+.emergency-services::after {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: moveCircles 8s infinite linear;
+}
+
+.emergency-services::after {
+  top: auto;
+  bottom: -100px;
+  right: -100px;
+  left: auto;
+  animation-delay: 4s;
+}
+
+@keyframes moveCircles {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-50px) translateX(50px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+/* Title */
+.emergency-services h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* Toggle Button */
+.toggle-btn {
+  padding: 12px 25px;
+  font-size: 16px;
+  background: white;
+  color: #2575fc;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.toggle-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.4);
+}
+
+/* Services List */
+.services-list {
+  margin-top: 30px;
+  display: none;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.services-list.show {
+  display: grid;
+  opacity: 1;
+  transform: translateY(0);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+/* Service Item Blocks */
+.service-item {
+  background: white;
+  color: #333;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.service-item h3 {
+  font-size: 18px;
+  color: #2575fc;
+  margin-bottom: 10px;
+}
+
+.service-item p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Book Now Button */
+.book-btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Booking Confirmation Message */
+.booking-confirmation {
+  margin-top: 20px;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  background: white;
+  color: green;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

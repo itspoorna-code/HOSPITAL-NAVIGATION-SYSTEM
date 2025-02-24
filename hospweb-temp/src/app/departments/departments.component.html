@@ -1,0 +1,27 @@
+<div class="slideshow">
+  <img src="assets/back1.jpg" alt="photo-1">
+  <img src="assets/back2.jpg" alt="photo-2">
+  <img src="assets/back3.jpg" alt="photo-3">
+  <img src="assets/back4.jpg" alt="photo-4">
+</div>
+
+<div class="container">
+  <h1>Hospital Departments</h1>
+
+  <!-- Dropdown for selecting weekday -->
+  <div class="filter">
+    <label for="weekday">Select a Day:</label>
+    <select id="weekday" [(ngModel)]="selectedDay" (change)="filterDepartments()">
+      <option *ngFor="let day of weekdays" [value]="day">{{ day }}</option>
+    </select>
+  </div>
+
+  <!-- Display active departments -->
+  <div class="departments">
+    <div *ngFor="let department of activeDepartments" class="department-card">
+      <img [src]="department.image" alt="{{ department.name }}" class="department-image" />
+      <h3>{{ department.name }}</h3>
+      <p>{{ department.description }}</p>
+    </div>
+  </div>
+</div>
