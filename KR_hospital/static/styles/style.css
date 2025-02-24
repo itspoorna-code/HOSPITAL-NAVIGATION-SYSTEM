@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+form {
+    margin: 20px auto;
+    display: inline-block;
+    text-align: left;
+}
+
+form label, form select, form button {
+    display: block;
+    margin: 10px 0;
+}
+
+#mapContainer {
+    margin-top: 20px;
+}
